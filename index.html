@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="icon" href="./icons/day/113.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      href="https://unpkg.com/bootstrap-icons@latest/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="text-light">
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io();
+      socket.emit("watch");
+      socket.on("reload", () => {
+        console.log("Reloading...");
+        location.reload();
+      });
+    </script>
+    <div
+      class="weather-app d-flex flex-column flex-md-row justify-content-md-between justify-content-sm-center"
+    >
+      <div class="d-flex mx-5 my-5 flex-column justify-content-between">
+        <div class="d-flex align-items-center">
+          <img src="./icons/day/113.png" alt="" />
+          <h1 class="mb-0">Weather App</h1>
+        </div>
+        <div class="d-flex flex-column flex-sm-row flex-md-column flex-lg-row">
+          <h1 class="temp me-2 mb-0 display-1 fw-bold"></h1>
+          <div class="d-flex">
+            <div
+              class="city-time d-flex flex-column justify-content-center me-4"
+            >
+              <div class="d-flex flex-column">
+                <div class="d-flex align-items-center">
+                  <h1 class="name mb-0"></h1>
+                  <div
+                    class="d-flex ms-3 align-items-center justify-content-center position-relative"
+                  >
+                    <input
+                      onchange="addCity()"
+                      id="check"
+                      name="city"
+                      class="check"
+                      type="checkbox"
+                    />
+                    <i
+                      class="unchecked bi bi-star display-6 position-absolute"
+                    ></i>
+                    <i
+                      class="checked bi bi-star-fill display-6 position-absolute"
+                    ></i>
+                  </div>
+                </div>
+                <span class="place"></span>
+              </div>
+              <small>
+                <span class="time"></span>
+                <span class="date"></span>
+              </small>
+            </div>
+            <div class="d-flex flex-column justify-content-center">
+              <img class="icon" alt="icon" width="50" height="50" />
+              <span class="text-center condition"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel px-lg-5 pt-5 pb-3 col-md-6">
+        <form
+          id="locationInput"
+          class="mb-5 d-flex justify-content-center border-bottom mx-5"
+        >
+          <input
+            type="text"
+            class="search bg-transparent text-light border-0 w-75 fs-5"
+            placeholder="Search Location..."
+          />
+          <button
+            class="submit py-2 bg-transparent border-0 text-light fs-3"
+            type="submit"
+          >
+            <i class="bi bi-search"></i>
+          </button>
+        </form>
+        <div class="mx-sm-5 mx-4 panel-content">
+          <h4 class="fw-bold opacity-100">Favorite cities</h4>
+          <p class="empty mt-4 opacity-50">You have no favorite cities!</p>
+          <ul id="cities" class="cities mt-0 d-flex flex-row"></ul>
+          <ul class="details opacity-75">
+            <h4 class="fw-bold opacity-100">Weather Details</h4>
+            <li>
+              <span>Cloudy</span>
+              <span class="cloud">89%</span>
+            </li>
+            <li>
+              <span>Humidity</span>
+              <span class="humidity">64%</span>
+            </li>
+            <li>
+              <span>Wind</span>
+              <span class="wind">8km/h</span>
+            </li>
+          </ul>
+          <h4 class="fw-bold opacity-100">Weather forecast</h4>
+          <ul id="days" class="days d-flex flex-row pb-5"></ul>
+          <h4 class="fw-bold opacity-100">Hourly forecast</h4>
+          <ul id="hours" class="hours d-flex flex-column pb-5 text-center"></ul>
+        </div>
+      </div>
+    </div>
+    <script src="/script.js"></script>
+  </body>
+</html>

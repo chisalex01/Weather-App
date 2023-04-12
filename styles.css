@@ -1,0 +1,175 @@
+body {
+  font-family: "Rubik", sans-serif;
+  background: #111;
+}
+
+h1,
+h3,
+h4 {
+  font-weight: 400;
+  cursor: default !important;
+}
+
+img {
+  height: 4em;
+  width: 4em;
+}
+
+span {
+  cursor: default;
+}
+
+ul {
+  padding: 0 0 0.5em 0;
+  margin: 2em 0;
+  list-style: none;
+}
+
+.check {
+  z-index: 1;
+  appearance: none;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+.check:checked ~ .checked {
+  display: block;
+}
+.check:checked ~ .unchecked {
+  display: none;
+}
+
+.checked {
+  display: none;
+  position: absolute;
+}
+
+.cities {
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+.cities ul {
+  margin-top: 0;
+}
+.cities li {
+  margin: 0.5em;
+  display: flex;
+  width: fit-content;
+  justify-content: space-between;
+}
+
+.city {
+  opacity: 50%;
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+  padding: 1em;
+  border-radius: 10px;
+  background: rgb(0, 0, 0, 0.5);
+  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+.city:hover {
+  opacity: 100%;
+}
+
+.day {
+  text-align: center;
+  font-size: 1.5em;
+  margin: 0.5em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  min-width: 12em;
+  border-radius: 10px;
+  background: rgb(0, 0, 0, 0.5);
+  box-shadow: 0 8px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.days {
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+.details li {
+  margin: 2.5em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hour {
+  margin: 0.5em 0;
+  padding: 1em 1em;
+  border-radius: 10px;
+  background: rgb(0, 0, 0, 0.5);
+  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+.hours {
+  font-size: 1em;
+  height: 30em;
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+
+.panel {
+  height: 100vh;
+  background: rgb(0, 0, 0, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(10px);
+  overflow-y: scroll;
+}
+.panel-content {
+  white-space: nowrap;
+}
+
+.search:focus {
+  outline: none;
+  caret-color: white;
+}
+.search:focus::placeholder {
+  opacity: 100%;
+}
+.search:hover::placeholder {
+  opacity: 75%;
+}
+.search::placeholder {
+  color: white;
+  opacity: 50%;
+  transition: opacity 0.5s ease;
+}
+
+.submit {
+  opacity: 50%;
+  transition: opacity 0.5s ease;
+}
+.submit:hover {
+  opacity: 100%;
+}
+
+.unchecked {
+  display: block;
+  position: absolute;
+}
+
+.weather-app {
+  min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 500ms;
+  opacity: 1;
+}
+
+ul::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.5) 10.12%,
+    rgba(82, 97, 234, 0) 82.22%
+  );
+  border-radius: 10px;
+}
