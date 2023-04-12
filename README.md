@@ -11,7 +11,9 @@ Funcționalități:
 9. Cere permisiunea pentru utilizarea locației curente și oferă datele despre vremea acesteia, iar în cazul în care accesul nu este permis, locația default este Oradea.
 10. Salvează orașele favorite în localstorage.
 
-Comenzile necesare pentru rularea proiectului:
+Proiectul poate fi rulat cu ajutorul terminalului și a comenzilor prezentate mai jos, sau cu extensia Live Server.
+
+Se vor introduce în terminalul bash următoarele comenzi:
 
 1. npm init
 2. npm install socket.io --save
