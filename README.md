@@ -15,9 +15,7 @@ Proiectul poate fi rulat cu ajutorul terminalului și a comenzilor prezentate ma
 
 Se vor introduce în terminalul bash următoarele comenzi:
 
-1. npm init
-2. npm install socket.io --save
-3. npm install nodemon
-4. nodemon server.js
+1. npm install -g nodemon
+2. nodemon server.js (rulează aplicația)
 
 După care se urmează instrucțiunile din terminal (Apăsați ctrl + click stânga pe link: http://localhost:3000) sau pur și simplu se poate introduce linkul în bara de căutare a browser-ului
