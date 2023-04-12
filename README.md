@@ -10,7 +10,7 @@ Funcționalități:
 9. Cere permisiunea pentru utilizarea locației curente și oferă datele despre vremea acesteia, iar în cazul în care accesul nu este permis, locația default este Oradea.
 
 Comenzile necesare pentru rularea proiectului:
-npm init
-npm install socket.io --save
-npm install nodemon
-nodemon server.js
+1. npm init
+2. npm install socket.io --save
+3. npm install nodemon
+4. nodemon server.js
