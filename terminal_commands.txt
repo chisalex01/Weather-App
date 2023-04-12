@@ -1,5 +1,0 @@
-npm init
-npm install bootstrap
-npm install socket.io --save
-npm install nodemon
-nodemon server.js
