@@ -19,3 +19,5 @@ Se vor introduce în terminalul bash următoarele comenzi:
 2. npm install socket.io --save
 3. npm install nodemon
 4. nodemon server.js
+
+După care se urmează instrucțiunile din terminal (Apăsați ctrl + click stânga pe link: http://localhost:3000) sau pur și simplu se poate introduce linkul în bara de căutare a browser-ului
